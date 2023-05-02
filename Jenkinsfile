@@ -18,7 +18,7 @@ pipeline {
             steps{
                 script{
                     withCredentials([string(credentialsId: 'docker-pwd1', variable: 'dockerpwd')]) {
-                    bat 'docker login -u muskankapoor -p Muskan1234567,'
+                        bat 'docker login -u muskankapoor -p ${dockerpwd}'
 }
                     bat 'docker push muskankapoor/devops-integration'
                 }
